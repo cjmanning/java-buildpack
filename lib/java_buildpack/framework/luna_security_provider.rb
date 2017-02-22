@@ -156,15 +156,6 @@ EOS
         f.write <<EOS
 }
 
-HAConfiguration = {
-  AutoReconnectInterval = 60;
-  HAOnly = 1;
-  reconnAtt = -1;
-EOS
-        write_ha_logging(f) if ha_logging?
-        f.write <<EOS
-}
-
 HASynchronize = {
 EOS
         groups.each { |group| f.write "  #{group['label']} = 1;\n" }
